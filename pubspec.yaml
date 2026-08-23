@@ -1,0 +1,98 @@
+name: fitness_app
+description: "Production-grade offline-first fitness app with Liquid Glass UI"
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+  flutter: ">=3.32.0 <4.0.0"
+
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+# All versions are pinned to exact stable releases to guarantee reproducible
+# builds. Do NOT use caret (^) or "any" — upgrade deliberately and test.
+# ---------------------------------------------------------------------------
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- iOS / Cupertino ---
+  cupertino_icons: 1.0.9
+
+  # --- State management (Riverpod 3.x — current stable) ---
+  # Note: tech spec mentioned Riverpod 2.x, but 3.x is the current stable line
+  # and 2.x is no longer maintained. Using 3.x per "latest stable" rule.
+  flutter_riverpod: 3.4.2
+
+  # --- Routing ---
+  go_router: 17.5.0
+
+  # --- Screen adaptation ---
+  flutter_screenutil: 5.9.3
+
+  # --- Logging (replaces print) ---
+  logger: 2.7.0
+
+  # --- Local key-value storage (app settings) ---
+  shared_preferences: 2.5.5
+
+  # --- Path provider (needed by storage layers) ---
+  path_provider: 2.1.6
+
+  # --- Networking (Phase 2+: AI / cloud sync / GIF loading) ---
+  dio: 5.11.0
+
+  # --- Image caching (Phase 3+: exercise GIFs) ---
+  cached_network_image: 3.4.1
+
+  # --- Data models (Phase 2+) ---
+  freezed_annotation: 3.1.0
+  json_annotation: 4.12.0
+
+  # --- Localization (Phase 12) ---
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+  # --- Charts (Phase 10) ---
+  fl_chart: 1.2.0
+
+  # --- Database (Phase 2) ---
+  # Using drift (SQL, mature, Dart 3 ready) instead of Isar.
+  # Isar 3.x is incompatible with Dart 3.13 (SDK constraint <3.0.0);
+  # Isar 4.x is dev-only. drift is the production-grade choice.
+  # `drift_flutter` bundles sqlite3_flutter_libs + path_provider wiring.
+  drift: 2.34.3
+  drift_flutter: 0.3.1
+  sqlite3: 3.5.2
+
+# ---------------------------------------------------------------------------
+# Dev dependencies
+# ---------------------------------------------------------------------------
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Lint rules
+  flutter_lints: 6.0.0
+
+  # Code generation
+  build_runner: 2.16.0
+  freezed: 4.0.0
+  json_serializable: 6.14.1
+  drift_dev: 2.34.5
+
+# ---------------------------------------------------------------------------
+# Flutter section
+# ---------------------------------------------------------------------------
+flutter:
+  uses-material-design: true
+
+  # Localization — generates AppLocalizations from ARB files.
+  generate: true
+
+  # Assets — declared here so they are bundled into the app.
+  assets:
+    - lib/assets/exercises.json

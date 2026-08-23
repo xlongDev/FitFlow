@@ -1,0 +1,46 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Generated files
+*.freezed.dart
+*.g.dart
+*.gr.dart
+*.mocks.dart
+lib/l10n/app_localizations.dart
+lib/l10n/app_localizations_*.dart
+
+# macOS
+.DS_Store
+
+# Project-specific
+skills/
+node_modules/
+download/
+upload/
+tool-results/
+.env
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+*.keystore
+*.jks
+
+# iOS
+ios/Pods/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Runner/GeneratedPluginRegistrant.*
